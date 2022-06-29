@@ -14,6 +14,7 @@ const defaultFn = () => {};
 function Menu({ children, items = [], onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
+
     const renderItems = () => {
         return current.data.map((item, index) => {
             const isParent = !!item.children;
@@ -36,6 +37,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
         <Tippy
             interactive
             delay={[0, 800]}
+            offset={[12, 8]} //Điều chỉnh chiều x,y
             placement="bottom-end"
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
@@ -54,6 +56,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                     </PopperWrapper>
                 </div>
             )}
+            // onHide={() => setHistory((prev) => prev.slice(0, prev.length - 1))}
         >
             {children}
         </Tippy>
