@@ -27,6 +27,8 @@ import {
     faCircleQuestion,
     faKeyboard,
 } from '@fortawesome/free-regular-svg-icons';
+import { UploadIcon, MessageIcon, InboxIcon } from '@/components/Icons';
+import Image from '@/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -149,7 +151,17 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="Upload video">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy delay={[0, 200]} content="Inbox">
+                                <button className={cx('action-btn')}>
+                                    <InboxIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy delay={[0, 200]} content="Message">
+                                <button className={cx('action-btn')}>
+                                    <MessageIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -164,7 +176,7 @@ function Header() {
                         onChange={handleChange}
                     >
                         {currentUser ? (
-                            <img
+                            <Image
                                 src="https://p16-sign-va.tiktokcdn.com/musically-maliva-obj/mig-55270006fc140d4a3e6f~c5_720x720.jpeg?x-expires=1656568800&x-signature=4mVgQiziOKHYnjHh5ZS08goXQH8%3D"
                                 className={cx('user-avatar')}
                                 alt="Nguyen Van A"
