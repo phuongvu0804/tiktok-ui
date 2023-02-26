@@ -31,13 +31,11 @@ function Button({
     //Remove event listener when button is disabled
     if (disabled) {
         //delete props.onClick; //xoá props onClick để nút disabled hoàn toàn ko bấm được
-        console.log(
-            Object.keys(props).forEach((key) => {
-                if (key.startsWith('on') && typeof props[key] === 'function') {
-                    delete props[key];
-                }
-            }),
-        );
+        Object.keys(props).forEach((key) => {
+            if (key.startsWith('on') && typeof props[key] === 'function') {
+                delete props[key];
+            }
+        });
     }
 
     if (to) {
