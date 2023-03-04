@@ -58,11 +58,11 @@ function Menu({
                                 }}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx('menu-body')}>{renderItems()}</div>
                     </PopperWrapper>
                 </div>
             )}
-            // onHide={() => setHistory((prev) => prev.slice(0, prev.length - 1))}
+            onHide={() => setHistory((prev) => prev.slice(0, prev.length - 1))}
         >
             {children}
         </Tippy>
